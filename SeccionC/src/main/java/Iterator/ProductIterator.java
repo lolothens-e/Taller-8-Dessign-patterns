@@ -9,5 +9,6 @@ package Iterator;
  * @author Dario Anchundia Cobo
  */
 public interface ProductIterator {
-    
+    boolean hasMore();
+    Object getNext();
 }

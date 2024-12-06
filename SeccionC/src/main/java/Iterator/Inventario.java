@@ -4,10 +4,31 @@
  */
 package Iterator;
 
+import java.util.List;
+
 /**
  *
  * @author Dario Anchundia Cobo
  */
-public class Inventario {
-    
+public class Inventario implements InventarioColeccionable {
+    private List<Object> productos;
+
+    public Inventario(List<Object> productos) {
+        this.productos = productos;
+    }
+
+    @Override
+    public ProductIterator createIteratorProductosDisponibles() {
+        return new ProductosDisponiblesIterator(productos);
+    }
+
+    @Override
+    public ProductIterator createIteratorProductosConFallas() {
+        return new ProductosConFallasIterator(productos);
+    }
+
+    @Override
+    public ProductIterator createIteratorProductosEnReparacion() {
+        return new ProductosReparacionIterator(productos);
+    }
 }

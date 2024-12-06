@@ -9,5 +9,8 @@ package Iterator;
  * @author Dario Anchundia Cobo
  */
 public interface InventarioColeccionable {
-    
+    ProductIterator createIteratorProductosDisponibles();
+    ProductIterator createIteratorProductosConFallas();
+    ProductIterator createIteratorProductosEnReparacion();
 }
+

@@ -4,10 +4,43 @@
  */
 package Iterator;
 
+import java.util.List;
+
 /**
  *
  * @author Dario Anchundia Cobo
  */
-public class ProductosDisponiblesIterator {
-    
+public class ProductosDisponiblesIterator implements ProductIterator {
+    private List<Object> inventario;
+    private int position;
+
+    public ProductosDisponiblesIterator(List<Object> inventario) {
+        this.inventario = inventario;
+        this.position = 0;
+    }
+
+    @Override
+    public boolean hasMore() {
+        while (position < inventario.size()) {
+            if (esDisponible(inventario.get(position))) {
+                return true;
+            }
+            position++;
+        }
+        return false;
+    }
+
+    @Override
+    public Object getNext() {
+        if (hasMore()) {
+            return inventario.get(position++);
+        }
+        return null;
+    }
+
+    private boolean esDisponible(Object producto) {
+        // Lógica para verificar si el producto está disponible
+        return true; // Placeholder
+    }
 }
+
