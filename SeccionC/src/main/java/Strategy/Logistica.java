@@ -10,13 +10,14 @@ package Strategy;
  */
 public class Logistica {
     public static void main(String[] args){
-        // Implementacion con clase Travells, instanciando un TravelStrategy y ejecutando de forma acorde.
-        TravelStrategy estrategiaEnvio;
-        estrategiaEnvio = new CiclistaStrategy(); // FluvialStrategy(), FerreaStrategy(), AereaStrategy(), AutomotrizStrategy(), etc. 
-        
+        // Implementacion con clase Travells, instanciando un viaje, seleccionando strategy y ejecutando de forma acorde.
+        Travells envio;
+        envio = new Travells(); 
+
+        envio.setStrategy(new CiclistaStrategy()); // FluvialStrategy(), FerreaStrategy(), AereaStrategy(), AutomotrizStrategy(), etc. 
         //Existira una logica que determine que estrategia instanciar. Cuando esta sea decidida solo sera necesario usar el metodo comun.
         
-        estrategiaEnvio.BuildTravell("Mexico", "Singapore");
+        envio.buildTravell("Mexico", "Singapore");
         //Cada metodo se encargara del resto.
     }
 }

@@ -11,7 +11,7 @@ package Strategy;
 public class FerreaStrategy implements TravelStrategy{
 
     @Override
-    public void BuildTravell(String A, String B) {
+    public void buildTravell(String A, String B) {
         // Implementacion usando ferry
     }
     

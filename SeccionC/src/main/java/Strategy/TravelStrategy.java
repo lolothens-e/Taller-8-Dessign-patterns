@@ -10,5 +10,5 @@ package Strategy;
  */
 public interface TravelStrategy {
     //Necessary attributes.
-    public void BuildTravell(String A, String B);
+    public void buildTravell(String A, String B);
 }
